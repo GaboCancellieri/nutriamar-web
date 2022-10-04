@@ -1,0 +1,34 @@
+.button {
+    border: 0;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+.tiny {
+    height: 20px;
+    width: 30px;
+}
+
+.small {
+    height: 36px;
+    width: 86px;
+}
+
+.normal {
+    height: 42px;
+    width: 108px;
+}
+
+.large {
+    height: 51px;
+    width: 116px;
+}
+
+.fit {
+    min-height: 42px;
+    min-width: 108px;
+    height: fit-content;
+    width: fit-content;
+}

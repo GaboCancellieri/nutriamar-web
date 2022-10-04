@@ -1,0 +1,10 @@
+.navBarContainer {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: #EFEFEF;
+    height: 50px;
+    width: 80%;
+}
