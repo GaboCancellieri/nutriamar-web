@@ -1,7 +1,8 @@
 import { buttonVariant, textColorVariant } from "./constants";
 import { ButtonProps } from "./types";
-import style from "./button.module.css";
+import style from "./button.module.scss";
 import Typography from "../Typography";
+import classNames from "classnames";
 
 const Button = ({
   rounded = true,
@@ -13,7 +14,9 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`${style.button} ${style[size]} ${rounded && [style.rounded]}`}
+      className={classNames(style.underline, style.button, style[size], {
+        [style.rounded]: rounded,
+      })}
       type={type}
       style={{ backgroundColor: buttonVariant[variant] }}
       onClick={onClick}

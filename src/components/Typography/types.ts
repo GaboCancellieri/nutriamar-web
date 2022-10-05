@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { typographyVariant } from "./constants";
 
 export interface TypographyProps {
+  className?: string;
   align?: "left" | "right" | "center" | "justify";
   color?: string;
   children: ReactNode;

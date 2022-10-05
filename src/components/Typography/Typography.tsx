@@ -2,6 +2,7 @@ import { typographyVariant } from "./constants";
 import { TypographyProps } from "./types";
 
 const Typography = ({
+  className = "",
   align = "center",
   color = "#000000",
   children,
@@ -11,6 +12,7 @@ const Typography = ({
 }: TypographyProps) => {
   return (
     <div
+      className={className}
       style={{
         color,
         fontSize: size,
