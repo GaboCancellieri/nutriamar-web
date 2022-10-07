@@ -1,0 +1,12 @@
+@import '@styles/variables/colors.scss';
+
+.navBarContainer {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: $colorAlmostWhite;
+    height: 50px;
+    margin-top: 2rem;
+}

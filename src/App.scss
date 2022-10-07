@@ -1,38 +1,16 @@
+@import '@styles/mixins/mediaqueries.scss';
+@import '@styles/variables/colors.scss';
+@import '@styles/variables/screenWidths.scss';
+
 .App {
+  background: $colorAlmostWhite;
   margin: 0 auto;
-  max-width: 1345px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  @include desktop-up {
+    max-width: $desktopHighWidth;
   }
 }
-
+  
 .App-header {
-  background-color: #EFEFEF;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

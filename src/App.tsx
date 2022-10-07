@@ -1,13 +1,14 @@
+import React from "react";
 import "./App.scss";
-import { NavBar } from "./components";
-import HomeBanner from "./components/HomeBanner";
+import { NavBar } from "@ccomponents";
+import { HomeScreen } from "./screens";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <NavBar />
-        <HomeBanner />
+        <HomeScreen></HomeScreen>
       </header>
     </div>
   );

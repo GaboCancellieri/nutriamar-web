@@ -1,0 +1,31 @@
+@import '@styles/variables/screenWidths.scss';
+
+@mixin mobile-only {
+  @media (max-width: $mobileWidth) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: ($mobileWidth + 1)) and (max-width: $tableWidth) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: ($mobileWidth + 1)) {
+    @content;
+  }
+}
+
+@mixin mobile-and-tablet-only {
+  @media (max-width: $tableWidth) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: ($tableWidth + 1)) {
+    @content;
+  }
+}
