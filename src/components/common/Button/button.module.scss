@@ -2,6 +2,7 @@
 
 .button {
     border: 0;
+    cursor: pointer;
 }
 
 .rounded {
@@ -45,4 +46,36 @@
 
 .alignLeft {
     float: left;
+}
+
+.primaryHover:hover {
+
+}
+
+.secondaryHover:hover {
+    
+}
+
+.successHover:hover {
+    
+}
+
+.infoHover:hover {
+    
+}
+
+.helpHover:hover {
+    
+}
+
+.warningHover:hover {
+    
+}
+
+.dangerHover:hover {
+    
+}
+
+.blankHover:hover {
+    text-decoration: underline;
 }

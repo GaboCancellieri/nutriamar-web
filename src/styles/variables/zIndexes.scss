@@ -1,0 +1,38 @@
+// Add z-indexes needed here, in the position needed. Placed more to the right means a higher index. It starts counting on belowAll as -1
+$zIndexes: (
+  'belowAll',
+  'default',
+  'base',
+  'miscellanea',
+  'figure',
+  'tag',
+  'button',
+  'panel',
+  'bar',
+  'dropdown',
+  'aboveDropdown',
+  'filterBar',
+  'videoPopup',
+  'editBottomBar',
+  'editMenu',
+  'mainNav',
+  'newsletterPopup',
+  'spinner',
+  'adminBar',
+  'modalOverlay',
+  'modalContent',
+  'rerankModal',
+  'signForm',
+  'adminPanel',
+  'notification'
+);
+
+// Z function return the z-index value
+@function z($name) {
+  @if index($zIndexes, $name) {
+    @return index($zIndexes, $name) - 2;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$zIndexes}';
+    @return null;
+  }
+}

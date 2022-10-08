@@ -1,12 +1,19 @@
 import { MouseEventHandler, ReactNode } from "react";
-import { buttonVariant } from "./constants";
+import {
+  buttonAlign,
+  buttonSize,
+  buttonType,
+  buttonVariant,
+} from "./constants";
 
 export interface ButtonProps {
-  align?: "center" | "right" | "left";
+  align?: keyof typeof buttonAlign;
   children: ReactNode;
   rounded?: boolean;
-  size?: "tiny" | "small" | "normal" | "large" | "fit";
+  size?: keyof typeof buttonSize;
   variant?: keyof typeof buttonVariant;
-  type?: "button" | "submit";
+  type?: keyof typeof buttonType;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  hover?: boolean;
+  outline?: boolean;
 }

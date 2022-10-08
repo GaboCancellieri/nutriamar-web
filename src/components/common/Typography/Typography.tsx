@@ -1,16 +1,19 @@
 import React from "react";
+import { CENTER, LATO, NONE, REGULAR } from "@constants/fonts";
 import { typographyVariant } from "./constants";
 import { TypographyProps } from "./types";
+import { COLOR_BLACK } from "@constants/colors";
 
 const Typography = ({
-  align = "center",
-  className = "",
+  align = CENTER,
+  className,
   children,
-  color = "#000000",
-  fontFamily = "lato",
+  color = COLOR_BLACK,
+  fontFamily = LATO,
   lineHeight = "24px",
+  textTransform = NONE,
   size = 14,
-  variant = "regular",
+  variant = REGULAR,
 }: TypographyProps) => {
   return (
     <div
@@ -20,6 +23,7 @@ const Typography = ({
         fontSize: size,
         fontFamily: typographyVariant[fontFamily][variant],
         textAlign: align,
+        textTransform,
         lineHeight,
       }}
     >

@@ -3,15 +3,19 @@ import { buttonAlign, buttonVariant } from "./constants";
 import { ButtonProps } from "./types";
 import style from "./button.module.scss";
 import classNames from "classnames";
+import { BUTTON, NORMAL } from "@constants/buttons";
+import { CENTER } from "@constants/fonts";
 
 const Button = ({
-  align = "center",
+  align = CENTER,
   children,
   onClick,
   rounded = true,
-  size = "normal",
-  type = "button",
+  size = NORMAL,
+  type = BUTTON,
   variant = "primary",
+  hover = false,
+  outline = false,
 }: ButtonProps) => {
   return (
     <button
@@ -21,6 +25,7 @@ const Button = ({
         style[buttonAlign[align]],
         {
           [style.rounded]: rounded,
+          [style[`${variant}Hover`]]: hover,
         }
       )}
       type={type}

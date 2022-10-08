@@ -7,7 +7,7 @@
 }
 
 @mixin tablet-only {
-  @media (min-width: ($mobileWidth + 1)) and (max-width: $tableWidth) {
+  @media (min-width: ($mobileWidth + 1)) and (max-width: $tabletWidth) {
     @content;
   }
 }
@@ -19,13 +19,13 @@
 }
 
 @mixin mobile-and-tablet-only {
-  @media (max-width: $tableWidth) {
+  @media (max-width: $tabletWidth) {
     @content;
   }
 }
 
 @mixin desktop-up {
-  @media (min-width: ($tableWidth + 1)) {
+  @media (min-width: ($tabletWidth + 1)) {
     @content;
   }
 }

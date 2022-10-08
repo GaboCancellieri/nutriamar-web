@@ -1,12 +1,16 @@
 @import '@styles/variables/colors.scss';
+@import '@styles/variables/zIndexes.scss';
 
 .navBarContainer {
     position: sticky;
+    position: -webkit-sticky;
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     background: $colorAlmostWhite;
-    height: 50px;
-    margin-top: 2rem;
+    height: 70px;
+    margin-top: 1rem;
+    z-index: z("mainNav");
 }

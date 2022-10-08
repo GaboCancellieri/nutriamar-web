@@ -1,7 +1,17 @@
 import {
-  COLOR_BLACK,
+  ALGIN_LEFT,
+  ALIGN_CENTER,
+  ALIGN_RIGHT,
+  BUTTON,
+  FIT,
+  LARGE,
+  NORMAL,
+  SMALL,
+  SUBMIT,
+  TINY,
+} from "@constants/buttons";
+import {
   COLOR_TRANSPARENT,
-  COLOR_WHITE,
   COLOR_DANGER,
   COLOR_HELP,
   COLOR_INFO,
@@ -27,7 +37,20 @@ export const buttonVariant = {
 };
 
 export const buttonAlign = {
-  center: "alignCenter",
-  right: "alignRight",
-  left: "alignLeft",
+  center: ALIGN_CENTER,
+  right: ALIGN_RIGHT,
+  left: ALGIN_LEFT,
+};
+
+export const buttonSize = {
+  tiny: TINY,
+  small: SMALL,
+  normal: NORMAL,
+  large: LARGE,
+  fit: FIT,
+};
+
+export const buttonType = {
+  button: BUTTON,
+  submit: SUBMIT,
 };

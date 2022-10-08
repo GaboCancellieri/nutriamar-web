@@ -1,19 +1,18 @@
 import { ReactNode } from "react";
-
+import {
+  fontFamilyTypes,
+  fontVariantTypes,
+  textAlignTypes,
+  textTransformTypes,
+} from "./constants";
 export interface TypographyProps {
-  align?: "left" | "right" | "center" | "justify";
+  align?: keyof typeof textAlignTypes;
   className?: string;
   children: ReactNode;
   color?: string;
-  fontFamily?: "lato" | "dosis";
+  fontFamily?: keyof typeof fontFamilyTypes;
   lineHeight?: string;
+  textTransform?: keyof typeof textTransformTypes;
   size?: number;
-  variant?:
-    | "bold"
-    | "extraBold"
-    | "regular"
-    | "italic"
-    | "medium"
-    | "black"
-    | "blackItalic";
+  variant?: keyof typeof fontVariantTypes;
 }

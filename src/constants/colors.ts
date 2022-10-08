@@ -14,6 +14,15 @@ export const COLOR_HELP = "#A855F7";
 export const COLOR_DANGER = "#EF4444";
 
 // COLORS
+// - WHITE
 export const COLOR_TRANSPARENT = "rgba(0,0,0,0)";
 export const COLOR_WHITE = "#FFFFFF";
+
+// - BLACK
 export const COLOR_BLACK = "#000000";
+export const COLOR_BLACK_HOVER = "#505050";
+
+// - GRAY
+export const COLOR_GRAY = "#8E8E8E";
+export const COLOR_GRAY_LIGHT = "#AEAEAE";
+export const COLOR_GRAY_EXTRA_LIGHT = "#C7C7C7";

@@ -1,0 +1,12 @@
+@import '@styles/mixins/mediaqueries.scss';
+@import '@styles/variables/colors.scss';
+@import '@styles/variables/screenWidths.scss';
+
+.screenContainer {
+  background: $colorAlmostWhite;
+  margin: 0 auto;
+  text-align: center;
+  @include desktop-up {
+    max-width: $desktopHighWidth;
+  }
+}
