@@ -1,0 +1,45 @@
+import {
+  COLOR_BLACK,
+  COLOR_DANGER,
+  COLOR_GRAY_EXTRA_LIGHT,
+  COLOR_GRAY_LIGHT,
+  COLOR_HELP,
+  COLOR_INFO,
+  COLOR_PRIMARY,
+  COLOR_PRIMARY_HOVER,
+  COLOR_PRIMARY_LIGHT,
+  COLOR_SECONDARY,
+  COLOR_SECONDARY_HOVER,
+  COLOR_SECONDARY_LIGHT,
+  COLOR_SUCCESS,
+  COLOR_WARNING,
+  COLOR_WHITE,
+} from "@constants/colors";
+
+export const ICON_COLORS_VARIANTS = {
+  black: COLOR_BLACK,
+  white: COLOR_WHITE,
+  primary: COLOR_PRIMARY,
+  primaryLight: COLOR_PRIMARY_LIGHT,
+  secondary: COLOR_SECONDARY,
+  secondaryLight: COLOR_SECONDARY_LIGHT,
+  success: COLOR_SUCCESS,
+  warning: COLOR_WARNING,
+  danger: COLOR_DANGER,
+  info: COLOR_INFO,
+  help: COLOR_HELP,
+  grayLight: COLOR_GRAY_LIGHT,
+  grayExtraLight: COLOR_GRAY_EXTRA_LIGHT,
+  primaryHover: COLOR_PRIMARY_HOVER,
+  secondaryHover: COLOR_SECONDARY_HOVER,
+};
+
+export const ICON_SIZE_VARIANTS = {
+  "1x": 14,
+  "2x": 28,
+  "3x": 42,
+  "4x": 56,
+  "5x": 70,
+  "6x": 84,
+  "7x": 98,
+};

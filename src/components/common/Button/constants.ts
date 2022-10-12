@@ -4,6 +4,7 @@ import {
   ALIGN_RIGHT,
   BUTTON,
   FIT,
+  FULL,
   LARGE,
   NORMAL,
   SMALL,
@@ -48,6 +49,7 @@ export const buttonSize = {
   normal: NORMAL,
   large: LARGE,
   fit: FIT,
+  full: FULL,
 };
 
 export const buttonType = {

@@ -16,3 +16,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.carousel .control-next.control-arrow, .carousel .control-next.control-arrow:hover{
+  border-radius: 10px;
+  background: $colorSecondaryLight;
+}
+
+.carousel .control-prev.control-arrow, .carousel .control-prev.control-arrow:hover {
+  border-radius: 10px;
+  background: $colorSecondaryLight;
+}
+
+.carousel .control-next.control-arrow {
+  border-radius: 10px;
+  background: $colorSecondaryLight;
+  content: '';
+}
+
+.carousel .control-prev.control-arrow {
+  border-radius: 10px;
+  background: $colorSecondaryLight;
+  content: '';
+}

@@ -1,0 +1,23 @@
+@import '@styles/variables/colors.scss';
+
+.bubbleContainer {
+  position: relative;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rectangleContainer {
+  position: relative;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fly {
+  position: absolute;
+}

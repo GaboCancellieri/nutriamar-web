@@ -5,6 +5,7 @@ import { NavBarProps } from "./types";
 import { Link } from "react-router-dom";
 import { ML_2, MR_6 } from "@constants/margins";
 import classNames from "classnames";
+import { NAV_MENU } from "./constants";
 
 const NavBar = ({ refs }: NavBarProps) => {
   const handleScroll = (ref: { offsetTop: number }) => {
@@ -15,8 +16,8 @@ const NavBar = ({ refs }: NavBarProps) => {
     });
   };
   return (
-    <>
-      <div className={style.navBarContainer}>
+    <div className={style.navBarContainer}>
+      <>
         <Link
           to="/"
           onClick={() => {
@@ -29,33 +30,23 @@ const NavBar = ({ refs }: NavBarProps) => {
             width="111px"
           />
         </Link>
-        <Link
-          to="/#about-me"
-          onClick={() => {
-            handleScroll(refs[1].current);
-          }}
-        >
-          <Button variant="blank">
-            <Typography>Sobre Mi</Typography>
-          </Button>
-        </Link>
-        <Button variant="blank">
-          <Typography>Metodología</Typography>
-        </Button>
-        <Button size="fit" variant="blank">
-          <Typography>Plan Nutricional</Typography>
-        </Button>
-        <Button variant="blank">
-          <Typography>Pacientes</Typography>
-        </Button>
-        <Button variant="blank">
-          <Typography>Testimonio</Typography>
-        </Button>
-        <Button variant="blank">
-          <Typography>Contacto</Typography>
-        </Button>
-      </div>
-    </>
+        {NAV_MENU.map((item, index) => {
+          return (
+            <Link
+              key={index}
+              to={item.linkTo}
+              onClick={() => {
+                handleScroll(refs[index + 1].current);
+              }}
+            >
+              <Button variant="blank" size="fit">
+                <Typography>{item.name}</Typography>
+              </Button>
+            </Link>
+          );
+        })}
+      </>
+    </div>
   );
 };
 

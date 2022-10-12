@@ -1,4 +1,5 @@
 // MARGIN TOP
+export const MT_05 = "mt-05";
 export const MT_1 = "mt-1";
 export const MT_2 = "mt-2";
 export const MT_3 = "mt-3";

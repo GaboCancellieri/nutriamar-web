@@ -1,0 +1,26 @@
+.linksContent {
+  display: flex;
+  flex: 0 0 20%;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.shapeContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.textContentCenter {
+  justify-content: center;
+  align-items: center;
+}

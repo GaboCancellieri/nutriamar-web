@@ -1,0 +1,42 @@
+@import '@styles/variables/colors.scss';
+@import '@styles/variables/screenWidths.scss';
+
+.testimoniesContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1000px;
+}
+
+.cardClass {
+  border: 4px solid $colorPrimaryLight;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1rem;
+}
+
+.cardContentClass {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.profilePicSection {
+  align-self: start;
+}
