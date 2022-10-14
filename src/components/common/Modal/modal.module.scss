@@ -1,0 +1,59 @@
+@import '@styles/variables/colors.scss';
+@import '@styles/variables/zIndexes.scss';
+
+.modalContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: z('modalOverlay');
+  opacity: 0;
+  visibility: hidden;
+  background: rgba($color: #000000, $alpha: 0.55);
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+  margin-top: 6rem;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background: $colorAlmostWhite;
+  z-index: z('modalContent');
+  box-shadow: 5px 10px 10px rgb(0 0 0 / 38%);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cancelButton {
+  height: fit-content;
+  width: fit-content;
+  padding: 6px;
+}
+
+.modalChildren {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.isActive {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.isVisible {
+  visibility: visible;
+}

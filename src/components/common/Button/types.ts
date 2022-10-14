@@ -8,6 +8,7 @@ import {
 
 export interface ButtonProps {
   align?: keyof typeof buttonAlign;
+  className?: string;
   children: ReactNode;
   rounded?: boolean;
   size?: keyof typeof buttonSize;
@@ -16,4 +17,5 @@ export interface ButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   hover?: boolean;
   outline?: boolean;
+  disabled?: boolean;
 }

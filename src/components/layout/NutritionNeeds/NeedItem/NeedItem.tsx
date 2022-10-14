@@ -10,7 +10,7 @@ import classNames from "classnames";
 
 const NeedItem = ({ needItem, index }: NeedItemProps) => {
   const titleLines = needItem.title.length / 21;
-  console.log({ titleLines });
+
   return (
     <Card
       className={styles.needItemCard}

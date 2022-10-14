@@ -17,6 +17,7 @@ const ContactMe = React.forwardRef(({}, ref) => {
         {CONTACT_ME_LINKS.map((link, index) => {
           return (
             <a
+              key={index}
               href={link.url}
               style={{ textDecoration: "none" }}
               target="_blank"

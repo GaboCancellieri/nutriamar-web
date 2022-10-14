@@ -10,7 +10,9 @@
       "@components": ["src/components/layout/index"],
       "@screens": ["src/screens/index"],
       "@constants/*": ["src/constants/*"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@systemApi/*": ["src/api/System/*"],
+      "@webApi/*": ["src/api/Web/*"]
     },
     "allowJs": true,
     "esModuleInterop": true,

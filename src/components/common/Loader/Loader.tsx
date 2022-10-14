@@ -1,14 +1,20 @@
 import React from "react";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { COLOR_PRIMARY } from "@constants/colors";
+import { PRIMARY } from "@constants/colors";
 import styles from "./loader.module.scss";
+import { Icon } from "@ccomponents";
+import { LoaderProps } from "./types";
 
-const Loader = () => {
+const Loader = ({ height = "100%", width = "100%" }: LoaderProps) => {
   return (
-    <AiOutlineLoading3Quarters
-      className={styles.iconSpin}
-      style={{ color: COLOR_PRIMARY }}
-    />
+    <div className={styles.loaderContainer} style={{ width, height }}>
+      <div className={styles.iconSpin}>
+        <Icon
+          color={PRIMARY}
+          iconId={"AiOutlineLoading3Quarters"}
+          iconDesign={"ant"}
+        />
+      </div>
+    </div>
   );
 };
 

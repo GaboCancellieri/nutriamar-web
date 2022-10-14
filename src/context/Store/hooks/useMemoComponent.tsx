@@ -1,9 +1,11 @@
+import React from "react";
 import {
   useRef,
   useMemo,
   ComponentType,
   MutableRefObject,
   ReactElement,
+  ComponentProps,
 } from "react";
 import isFunction from "lodash/isFunction";
 import usePreviousValue from "./usePreviousValue";
@@ -11,7 +13,7 @@ import { EqualityFunctionType } from "../connect/types";
 
 export interface useMemoComponentOptions<T = any> {
   Component: ComponentType<T>;
-  props: ComponentProps;
+  props: ComponentProps<any>;
   ref: MutableRefObject<T>;
   isEqual?: EqualityFunctionType;
 }

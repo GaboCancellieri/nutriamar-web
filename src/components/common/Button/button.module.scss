@@ -3,6 +3,21 @@
 .button {
     border: 0;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.button:disabled {
+    pointer-events: none;
+    cursor: none;
+    background: $colorTextGrayExtraLight !important;
+    transition: 1s;
+
+    div {
+        color: $colorTextGrayLight !important;
+    }
 }
 
 .rounded {
@@ -31,7 +46,6 @@
 
 .fit {
     min-height: 42px;
-    min-width: 108px;
     height: fit-content;
     width: fit-content;
 }
@@ -47,10 +61,12 @@
 }
 
 .alignRight {
+    align-self: flex-end;
     float: right;
 }
 
 .alignLeft {
+    align-self: flex-start;
     float: left;
 }
 

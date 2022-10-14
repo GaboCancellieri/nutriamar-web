@@ -20,6 +20,7 @@ const Testimonies = React.forwardRef(({}, ref) => {
         swipeable
         showStatus={false}
         showIndicators={false}
+        showThumbs={false}
       >
         {TESTIMONIES_ALL.map((item, index) => {
           return (

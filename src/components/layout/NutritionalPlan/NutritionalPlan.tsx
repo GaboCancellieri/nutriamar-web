@@ -19,7 +19,7 @@ const NutritionalPlan = React.forwardRef(({}, ref) => {
     >
       <Divider color={SECONDARY} length="955px" />
       {NP_SECTIONS.map((item, index) => {
-        return <Section section={item} index={index} />;
+        return <Section key={index} section={item} index={index} />;
       })}
       <Divider className={MT_2} color={SECONDARY} length="955px" />
     </div>

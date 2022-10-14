@@ -11,7 +11,14 @@ const NutritionalInfo = React.forwardRef(({}, ref) => {
       ref={ref as LegacyRef<HTMLDivElement> | undefined}
     >
       {NUTRITIONAL_INFO_SECTIONS.map((item, index) => {
-        return <Section section={item} index={index} columnMargin="4rem" />;
+        return (
+          <Section
+            key={index}
+            section={item}
+            index={index}
+            columnMargin="4rem"
+          />
+        );
       })}
     </div>
   );

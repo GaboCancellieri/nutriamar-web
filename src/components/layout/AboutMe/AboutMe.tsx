@@ -1,4 +1,4 @@
-import React, { LegacyRef } from "react";
+import React, { LegacyRef, useEffect } from "react";
 import { ABOUT_BE_SECTIONS } from "./constants";
 import styles from "./aboutMe.module.scss";
 import Section from "src/components/common/Section";
@@ -10,7 +10,7 @@ const AboutMe = React.forwardRef(({}, ref) => {
       className={styles.aboutMeContainer}
     >
       {ABOUT_BE_SECTIONS.map((item, index) => {
-        return <Section section={item} index={index} />;
+        return <Section key={index} section={item} index={index} />;
       })}
     </div>
   );

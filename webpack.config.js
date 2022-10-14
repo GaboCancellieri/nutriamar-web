@@ -1,7 +1,9 @@
 const path = require("path");
+const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const ForkTSCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+require("dotenv").config({ path: "./envs/.env.dev" });
 
 module.exports = {
   mode: "development",
@@ -38,6 +40,9 @@ module.exports = {
       template: "./public/index.html",
     }),
     new ForkTSCheckerWebpackPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+    }),
   ],
   devServer: {
     port: 3000,

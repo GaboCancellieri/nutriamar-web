@@ -1,5 +1,5 @@
-import isObjectLike from 'lodash/isObjectLike';
-import { EqualityFunctionType } from '../connect/types';
+import isObjectLike from "lodash/isObjectLike";
+import { EqualityFunctionType } from "../connect/types";
 
 /**
  * This function does a shallow comparison on two objects
@@ -19,7 +19,10 @@ const shallowEquals: EqualityFunctionType = (a, b) => {
   const keys = Object.keys(a);
 
   for (let i = 0; i < keys.length; i++) {
-    if (!Object.prototype.hasOwnProperty.call(b, keys[i]) || !Object.is(a[keys[i]], b[keys[i]])) {
+    if (
+      !Object.prototype.hasOwnProperty.call(b, keys[i]) ||
+      !Object.is(a[keys[i]], b[keys[i]])
+    ) {
       return false;
     }
   }

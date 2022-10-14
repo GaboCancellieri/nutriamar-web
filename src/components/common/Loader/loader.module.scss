@@ -1,3 +1,14 @@
+@import '@styles/variables/colors.scss';
+
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: rgba($color: $colorSecondaryLight, $alpha: 0.5);
+}
+
 .iconSpin {
     -webkit-animation: icon-spin 2s infinite linear;
             animation: icon-spin 2s infinite linear;
