@@ -1,3 +1,6 @@
+import { MouseEventHandler } from "react";
+import { IFRAME_BACKGROUND_VARIANTS } from "../IFrame/constants";
+import { IFrameBackgroundType } from "../IFrame/types";
 import {
   fontFamilyTypes,
   textAlignTypes,
@@ -15,6 +18,11 @@ export type TextType = {
   classname?: string;
 };
 
+export type IFrameType = {
+  url: string;
+  background: IFrameBackgroundType;
+};
+
 export type ImageType = {
   url: string;
   altText: string;
@@ -27,6 +35,7 @@ export type SectionType = {
   subtitle?: TextType;
   description?: TextType;
   image?: ImageType;
+  iframe?: IFrameType;
   links?: SectionLinkType[];
 };
 
@@ -36,4 +45,8 @@ export interface SectionProps {
   index: number;
   enableInversion?: boolean;
   columnMargin?: string;
+  enableScrollAnimation?: boolean;
+  enableSectionEdit?: boolean;
+  onEditIFrame?: Function;
+  onEditImage?: Function;
 }

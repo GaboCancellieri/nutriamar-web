@@ -11,6 +11,7 @@ export const MT_8 = "mt-8";
 export const MT_9 = "mt-9";
 
 // MARGIN BOTTOM
+export const MB_05 = "mb-05";
 export const MB_1 = "mb-1";
 export const MB_2 = "mb-2";
 export const MB_3 = "mb-3";
@@ -22,6 +23,7 @@ export const MB_8 = "mb-8";
 export const MB_9 = "mb-9";
 
 // MARGIN RIGHT
+export const MR_05 = "mr-05";
 export const MR_1 = "mr-1";
 export const MR_2 = "mr-2";
 export const MR_3 = "mr-3";
@@ -33,6 +35,7 @@ export const MR_8 = "mr-8";
 export const MR_9 = "mr-9";
 
 // MARGIN LEFT
+export const ML_05 = "ml-05";
 export const ML_1 = "ml-1";
 export const ML_2 = "ml-2";
 export const ML_3 = "ml-3";

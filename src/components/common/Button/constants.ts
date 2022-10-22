@@ -23,6 +23,7 @@ import {
   COLOR_SECONDARY_LIGHT,
   COLOR_PRIMARY_LIGHT,
   COLOR_GRAY_LIGHT,
+  COLOR_WHITE,
 } from "@constants/colors";
 
 export const buttonVariant = {
@@ -37,6 +38,7 @@ export const buttonVariant = {
   danger: COLOR_DANGER,
   blank: COLOR_TRANSPARENT,
   grayLight: COLOR_GRAY_LIGHT,
+  white: COLOR_WHITE,
 };
 
 export const buttonAlign = {

@@ -1,6 +1,7 @@
 import {
   COLOR_BLACK,
   COLOR_DANGER,
+  COLOR_GRAY_EXTRA_LIGHT,
   COLOR_HELP,
   COLOR_INFO,
   COLOR_PRIMARY,
@@ -20,4 +21,5 @@ export const DIVIDER_COLOR_VARIANTS = {
   help: COLOR_HELP,
   white: COLOR_WHITE,
   black: COLOR_BLACK,
+  grayExtraLight: COLOR_GRAY_EXTRA_LIGHT,
 };

@@ -45,16 +45,15 @@ const LoginModal = ({
         email: loginState.email,
         password: loginState.password,
       });
-      console.log({ user: getUserAccessToken(result.data.accessToken) });
-      userDispatcher(
-        logInUser(
-          result.data.user,
-          result.data.accessToken,
-          result.data.refreshToken
-        )
-      );
-      localStorage.setItem("accessToken", result.data.accessToken);
-      localStorage.setItem("refreshToken", result.data.refreshToken);
+      const user = getUserAccessToken(result.data.accessToken);
+      if (user) {
+        userDispatcher(
+          logInUser(user, result.data.accessToken, result.data.refreshToken)
+        );
+        localStorage.setItem("accessToken", result.data.accessToken);
+        localStorage.setItem("refreshToken", result.data.refreshToken);
+        () => onCancel;
+      }
     } catch (error: any) {
       if (error.response.status > 200) loginDispatch(setLoginIsError(true));
     }
@@ -68,7 +67,7 @@ const LoginModal = ({
       height={"380px"}
     >
       <div className={styles.content}>
-        <Logo height={"100px"} width={"200px"} />
+        <Logo variant="normal" height={"100px"} width={"200px"} />
         <Input
           className={MT_2}
           placeholder="email"

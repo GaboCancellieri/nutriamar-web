@@ -25,7 +25,7 @@ const Footer = React.forwardRef(({}, ref) => {
           width={"350px"}
           height={"185px"}
           altText={"logo"}
-          url={"./public/img/logos/Logo-Alt.png"}
+          url={"./public/img/logos/logo-alternative.png"}
         />
         <div className={styles.textContainer}>
           <Typography align={LEFT} size={24} color={COLOR_PRIMARY}>

@@ -1,0 +1,35 @@
+@import '@styles/variables/colors.scss';
+@import '@styles/variables/zIndexes.scss';
+
+.alert {
+  border: 1px solid lightgrey;
+  border-radius: 20px;
+  background: $colorAlmostWhite;
+  box-shadow: 5px 10px 10px rgb(0 0 0 / 38%);
+  z-index: z('alert');
+}
+
+.urgentContainer {
+  position: absolute;
+  padding: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  background: $colorWhite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.confirmButton {
+  margin-top: auto !important;
+}

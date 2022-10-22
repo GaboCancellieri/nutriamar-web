@@ -16,6 +16,7 @@ const Button = ({
   type = BUTTON,
   variant = "primary",
   hover = false,
+  focus = false,
   outline = false,
   disabled = false,
 }: ButtonProps) => {
@@ -29,6 +30,7 @@ const Button = ({
         {
           [style.rounded]: rounded,
           [style[`${variant}Hover`]]: hover,
+          [style[`${variant}IsActive`]]: focus,
         }
       )}
       type={type}

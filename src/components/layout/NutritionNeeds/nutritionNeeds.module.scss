@@ -1,18 +1,23 @@
+@import '@styles/variables/colors.scss';
+
 .nutritionNeedsContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: $colorSecondaryLight;
+  padding: 2rem;
 }
 
 .needsContainer {
-  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  width: 1085px;
+  max-width: 1085px;
 }
 
 .buttonContainer {

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 import App from "./App";
-import { Footer } from "@ccomponents";
+import { Alert, Footer } from "@ccomponents";
 import GlobalStateProvider from "./context/GlobalStateProvider/GlobalStateProvider";
 
 const root = ReactDOM.createRoot(
@@ -11,6 +11,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <GlobalStateProvider>
+      <Alert type={"urgent"} variant={"success"} />
       <App />
       <Footer />
     </GlobalStateProvider>

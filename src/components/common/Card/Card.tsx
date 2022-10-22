@@ -18,7 +18,7 @@ const Card = ({
 }: CardProps) => {
   return (
     <div
-      className={classNames(className, styles.cardContainer)}
+      className={classNames(styles.cardContainer, className)}
       style={{
         flex: `0 0 ${CARDS_PER_ROW_VARIANTS[cardsPerRow]}`,
         maxWidth: `${containerLimit}px`,

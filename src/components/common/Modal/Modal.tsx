@@ -7,6 +7,7 @@ import Button from "../Button";
 import Icon from "../Icon";
 import styles from "./modal.module.scss";
 import { ModalProps } from "./types";
+import { restorePageOverflowY } from "src/utils/modal";
 
 const Modal = ({
   children,
@@ -22,7 +23,7 @@ const Modal = ({
   }, [isActive]);
 
   const handleModalCancel = (event: any) => {
-    document.body.style.overflowY = "scroll";
+    restorePageOverflowY();
     onCancel();
   };
 
@@ -32,11 +33,12 @@ const Modal = ({
         [styles.isVisible]: isActive,
         [styles.isActive]: isActive,
       })}
-      onClick={handleModalCancel}
+      onMouseDown={handleModalCancel}
+      onMouseUp={() => {}}
     >
       <div
         className={styles.modalContent}
-        onClick={(event: any) => {
+        onMouseDown={(event: any) => {
           event.stopPropagation();
         }}
         style={{ width, height }}

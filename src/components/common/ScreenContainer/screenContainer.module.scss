@@ -6,7 +6,4 @@
   background: $colorAlmostWhite;
   margin: 0 auto;
   text-align: center;
-  @include desktop-up {
-    max-width: $desktopHighWidth;
-  }
 }

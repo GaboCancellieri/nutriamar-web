@@ -17,6 +17,7 @@ const NutritionalInfo = React.forwardRef(({}, ref) => {
             section={item}
             index={index}
             columnMargin="4rem"
+            enableScrollAnimation
           />
         );
       })}

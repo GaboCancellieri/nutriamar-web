@@ -1,9 +1,10 @@
+import { getUserAccessToken } from "src/utils/user";
 import { IReducerOptions } from "../Store/types";
 import * as Actions from "./actions";
 import { IUserState } from "./types";
 
 export const userInitialState = {
-  currentUser: null,
+  currentUser: getUserAccessToken(localStorage.getItem("accessToken")),
   accessToken: localStorage.getItem("accessToken"),
   refreshToken: localStorage.getItem("refreshToken"),
   geoCountryCode: "US",

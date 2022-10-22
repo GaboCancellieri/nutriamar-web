@@ -1,15 +1,24 @@
 import React, { useState } from "react";
-import { Button, LoginModal, Logo, Modal, Typography } from "@ccomponents";
+import { Button, LoginModal, Logo, Typography } from "@ccomponents";
 import style from "./navBar.module.scss";
 import { NavBarProps } from "./types";
 import { Link } from "react-router-dom";
-import { ML_2, MR_6 } from "@constants/margins";
+import { MB_1, ML_1, ML_2, MR_1, MR_6 } from "@constants/margins";
 import classNames from "classnames";
 import { NAV_MENU } from "./constants";
 import { BOLD, RIGHT, UPPERCASE } from "@constants/fonts";
-import { COLOR_PRIMARY, COLOR_WHITE } from "@constants/colors";
+import {
+  COLOR_PRIMARY,
+  COLOR_PRIMARY_HOVER,
+  COLOR_SECONDARY_HOVER,
+} from "@constants/colors";
+import UserNavMenu from "./UserNavMenu/UserNavMenu";
+import connect from "src/context/Store/connect";
+import { ComponentPropsType } from "src/context/Store/connect/types";
+import { UserStateContext } from "src/context/UserContext/UserContext";
+import { IUser } from "src/context/UserContext/types";
 
-const NavBar = ({ refs }: NavBarProps) => {
+const NavBar = ({ refs, userLoggedIn }: NavBarProps) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const handleScroll = (ref: { offsetTop: number }) => {
     window.scrollTo({
@@ -30,7 +39,7 @@ const NavBar = ({ refs }: NavBarProps) => {
   return (
     <>
       <div className={style.navBarContainer}>
-        <>
+        <div className={style.navBarContent}>
           <Link
             to="/"
             onClick={() => {
@@ -41,6 +50,7 @@ const NavBar = ({ refs }: NavBarProps) => {
               className={classNames(MR_6, ML_2)}
               height="55px"
               width="111px"
+              variant={"alternative"}
             />
           </Link>
           {NAV_MENU.map((item, index) => {
@@ -51,30 +61,42 @@ const NavBar = ({ refs }: NavBarProps) => {
                 onClick={() => {
                   handleScroll(refs[index + 1].current);
                 }}
+                style={{ textDecoration: "none" }}
               >
                 <Button variant="blank" size="fit">
-                  <Typography>{item.name}</Typography>
+                  <Typography
+                    className={style.menuTextButton}
+                    color={COLOR_PRIMARY_HOVER}
+                    variant={BOLD}
+                  >
+                    {item.name}
+                  </Typography>
                 </Button>
               </Link>
             );
           })}
           <div style={{ alignSelf: "center" }}>
-            <Button
-              variant="secondaryLight"
-              size="fit"
-              align={RIGHT}
-              onClick={handleShowLoginModal}
-            >
-              <Typography
-                textTransform={UPPERCASE}
-                color={COLOR_PRIMARY}
-                variant={BOLD}
+            {!userLoggedIn ? (
+              <Button
+                variant="white"
+                size="fit"
+                align={RIGHT}
+                onClick={handleShowLoginModal}
               >
-                Login
-              </Typography>
-            </Button>
+                <Typography
+                  textTransform={UPPERCASE}
+                  className={classNames(MR_1, ML_1)}
+                  color={COLOR_PRIMARY}
+                  variant={BOLD}
+                >
+                  Login
+                </Typography>
+              </Button>
+            ) : (
+              <UserNavMenu></UserNavMenu>
+            )}
           </div>
-        </>
+        </div>
       </div>
       {
         <LoginModal
@@ -86,4 +108,27 @@ const NavBar = ({ refs }: NavBarProps) => {
   );
 };
 
-export default NavBar;
+const mapStateToProps: any = [
+  {
+    context: UserStateContext,
+    mapStateToProps: ({ currentUser }: { currentUser: IUser }) => ({
+      currentUser,
+    }),
+  },
+];
+
+const mergeProps = (
+  stateProps: ComponentPropsType,
+  dispatchProps: ComponentPropsType,
+  ownProps: ComponentPropsType
+) => {
+  const { currentUser } = stateProps;
+  const userLoggedIn = currentUser ? true : false;
+  return {
+    userLoggedIn,
+    ...ownProps,
+    ...dispatchProps,
+  };
+};
+
+export default connect({ mapStateToProps, mergeProps })(NavBar);

@@ -1,5 +1,3 @@
-import { COLOR_DANGER } from "@constants/colors";
-import { LEFT } from "@constants/fonts";
 import {
   INPUT_STATE_ERROR,
   INPUT_STATE_NORMAL,

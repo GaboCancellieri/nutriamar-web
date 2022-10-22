@@ -1,17 +1,51 @@
+@import '@styles/variables/zIndexes.scss';
+
 .homeBannerContainer {
     position: relative;
-    margin-top: 1rem;
     width: 100%;
 }
 
-.centered {
+.homeBannerTextContainer {
     position: absolute;
     top: 120px;
     left: 50%;
     transform: translate(-50%);
-    width: 30%;
+    width: 100%;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 300px;
+    z-index: z('miscellanea');
+  }
+
+  .homeBannerImage {
+    object-fit: cover;
+    max-height: 800px;
+    z-index: z("belowAll");
+  }
+
+  .homeBannerPlate {
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: z("base");
+  }
+
+  .homeBannerWave {
+    position: absolute;
+    bottom: -3rem;
+    left: 0;
+    z-index: z("figure");
+  }
+
+  .textInput {
+    background: transparent !important;
+    border: 0px !important;
+    box-shadow: 0px 0px 0px transparent !important;
+  }
+
+  .editContainer {
+    height: 930px !important;
   }

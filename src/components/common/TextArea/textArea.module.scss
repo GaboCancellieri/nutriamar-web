@@ -1,0 +1,23 @@
+@import '@styles/variables/colors.scss';
+
+.textAreaContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.transparent {
+  width: inherit;
+  background: transparent;
+  border: 0px;
+  resize: none;
+  overflow: hidden;
+}
+
+.transparent:focus { 
+  outline: none !important;
+  border-color: $colorPrimary;
+  box-shadow: 1px 1px 10px $colorPrimary;
+  border-radius: 10px;
+}

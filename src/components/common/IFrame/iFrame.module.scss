@@ -1,0 +1,30 @@
+@import '@styles/variables/colors.scss';
+@import '@styles/variables/zIndexes.scss';
+
+.iframeContainer {
+  position: relative;
+  margin: 2rem;
+}
+
+.iframeImageContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.desktopFrame {
+  margin-top: 1rem
+}
+
+.iframeEditButtonContainer {
+  position: absolute;
+  top:0;
+  right: 0;
+  z-index: z('button');
+}
+
+.iframeEditButton {
+  padding: 10px;
+}

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ChangeEventHandler, ReactNode } from "react";
 import {
   fontFamilyTypes,
   fontVariantTypes,
@@ -10,8 +10,11 @@ export interface TypographyProps {
   className?: string;
   children: ReactNode;
   color?: string;
+  enableEdit?: boolean;
   fontFamily?: keyof typeof fontFamilyTypes;
   lineHeight?: string;
+  maxHeight?: string;
+  onChange?: ChangeEventHandler<HTMLTextAreaElement>;
   textTransform?: keyof typeof textTransformTypes;
   size?: number;
   variant?: keyof typeof fontVariantTypes;

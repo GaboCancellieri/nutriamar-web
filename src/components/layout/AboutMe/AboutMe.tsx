@@ -10,7 +10,14 @@ const AboutMe = React.forwardRef(({}, ref) => {
       className={styles.aboutMeContainer}
     >
       {ABOUT_BE_SECTIONS.map((item, index) => {
-        return <Section key={index} section={item} index={index} />;
+        return (
+          <Section
+            key={index}
+            section={item}
+            index={index}
+            enableScrollAnimation
+          />
+        );
       })}
     </div>
   );

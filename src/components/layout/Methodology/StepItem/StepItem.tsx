@@ -5,6 +5,9 @@ import {
   COLOR_PRIMARY,
   COLOR_WHITE,
   GRAY_EXTRA_LIGHT,
+  PRIMARY,
+  PRIMARY_LIGHT,
+  SECONDARY_LIGHT,
 } from "@constants/colors";
 import { SHAPE_BUBBLE } from "@constants/shapes";
 import { Card, Icon, Shape, Typography } from "@ccomponents";
@@ -15,8 +18,15 @@ import { StepItemProps } from "./types";
 
 const StepItem = ({ step, index }: StepItemProps) => {
   return (
-    <Card key={index} containerLimit={450} contentLimit={450} cardsPerRow={2}>
-      <Shape type={SHAPE_BUBBLE} width={154} height={154}>
+    <Card
+      key={index}
+      className={styles.stepCard}
+      containerLimit={450}
+      contentLimit={450}
+      cardsPerRow={2}
+      vAlign={"top"}
+    >
+      <Shape type={SHAPE_BUBBLE} width={154} height={154} color={PRIMARY}>
         <div className={styles.bubbleContent}>
           <Shape
             align={LEFT}

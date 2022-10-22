@@ -1,6 +1,13 @@
 import React from "react";
 import { Card, Icon, Shape, Typography } from "@ccomponents";
-import { COLOR_PRIMARY, PRIMARY, SECONDARY_LIGHT } from "@constants/colors";
+import {
+  COLOR_PRIMARY,
+  COLOR_WHITE,
+  PRIMARY,
+  SECONDARY,
+  SECONDARY_LIGHT,
+  WHITE,
+} from "@constants/colors";
 import { DOSIS, UPPERCASE } from "@constants/fonts";
 import styles from "./needItem.module.scss";
 import { NeedItemProps } from "./types";
@@ -18,10 +25,11 @@ const NeedItem = ({ needItem, index }: NeedItemProps) => {
       containerLimit={320}
       contentLimit={220}
       cardsPerRow={3}
-      height={"fit-content"}
+      height={"270px"}
+      hAlign={POSITION_TOP}
       vAlign={POSITION_TOP}
     >
-      <Shape color={SECONDARY_LIGHT} width={224} height={120}>
+      <Shape color={PRIMARY} width={340} height={120} top={"-0.7rem"}>
         <Shape
           type={SHAPE_BUBBLE}
           fly
@@ -37,7 +45,7 @@ const NeedItem = ({ needItem, index }: NeedItemProps) => {
             [MT_1]: titleLines > 1 && titleLines < 1.5,
             [MT_2]: titleLines >= 1.5,
           })}
-          color={COLOR_PRIMARY}
+          color={COLOR_WHITE}
           size={21}
           textTransform={UPPERCASE}
           fontFamily={DOSIS}

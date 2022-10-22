@@ -16,6 +16,7 @@ export interface ButtonProps {
   type?: keyof typeof buttonType;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   hover?: boolean;
+  focus?: boolean;
   outline?: boolean;
   disabled?: boolean;
 }

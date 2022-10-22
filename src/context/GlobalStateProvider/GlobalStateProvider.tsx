@@ -1,12 +1,15 @@
 import React from "react";
-import { UserProvider } from "../UserContext/UserContext";
+import ScreenProvider from "../ScreenContext";
+import UserProvider from "../UserContext";
 import { WindowSizeProvider } from "../WindowSizeProvider/WindowSizeProvider";
 import { GlobalStateProviderProps } from "./types";
 
 const GlobalStateProvider = ({ children }: GlobalStateProviderProps) => {
   return (
     <WindowSizeProvider>
-      <UserProvider>{children}</UserProvider>
+      <ScreenProvider>
+        <UserProvider>{children}</UserProvider>
+      </ScreenProvider>
     </WindowSizeProvider>
   );
 };

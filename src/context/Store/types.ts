@@ -12,5 +12,5 @@ export interface ProviderProps {
 
 export interface IReducerOptions {
   action: string;
-  payload: any;
+  payload?: any;
 }

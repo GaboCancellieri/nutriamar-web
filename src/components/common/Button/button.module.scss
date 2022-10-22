@@ -6,14 +6,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .button:disabled {
     pointer-events: none;
-    cursor: none;
+    cursor: default;
     background: $colorTextGrayExtraLight !important;
-    transition: 1s;
+    transition: 0.5s;
 
     div {
         color: $colorTextGrayLight !important;
@@ -70,8 +70,15 @@
     float: left;
 }
 
-.primaryHover:hover {
+.primaryHover:hover:not(.primaryIsActive) {
+    margin-top: -1rem;
+    box-shadow: 2px 2px 8px $colorTextGray;
+    background: $colorPrimaryHover !important;
+}
 
+.primaryIsActive {
+    cursor: default;
+    background: $colorPrimaryHover !important;
 }
 
 .secondaryHover:hover {

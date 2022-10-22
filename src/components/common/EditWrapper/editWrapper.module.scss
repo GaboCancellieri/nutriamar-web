@@ -1,0 +1,25 @@
+@import '@styles/variables/colors.scss';
+
+.editWrapperContainer {
+  width: 100%;
+  height: 100%;
+  // height: 930px;
+  border: 3px solid #B0219B;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px grey;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid $colorPrimary;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px gray;
+}
+
+.mainButtonWrapper {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.editContentWrapper {
+  padding: 30px;
+}

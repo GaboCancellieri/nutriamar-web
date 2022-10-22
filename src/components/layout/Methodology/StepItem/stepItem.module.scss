@@ -1,3 +1,24 @@
+@import '@styles/variables/colors.scss';
+
+.stepCard {
+  background: $colorWhite;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px transparent;
+  margin: 10px;
+  transition: 0.5s;
+  min-height: 350px;
+  max-height: 350px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.stepCard:hover {
+  background: $colorWhite;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px $colorPrimary;
+  margin: 10px;
+}
+
 .bubbleContent {
   width: inherit;
   height: inherit;
