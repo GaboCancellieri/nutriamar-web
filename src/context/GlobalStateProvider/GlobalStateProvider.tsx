@@ -1,4 +1,5 @@
 import React from "react";
+import { AlertProvider } from "../AlertContext/AlertContext";
 import ScreenProvider from "../ScreenContext";
 import UserProvider from "../UserContext";
 import { WindowSizeProvider } from "../WindowSizeProvider/WindowSizeProvider";
@@ -8,7 +9,9 @@ const GlobalStateProvider = ({ children }: GlobalStateProviderProps) => {
   return (
     <WindowSizeProvider>
       <ScreenProvider>
-        <UserProvider>{children}</UserProvider>
+        <UserProvider>
+          <AlertProvider>{children}</AlertProvider>
+        </UserProvider>
       </ScreenProvider>
     </WindowSizeProvider>
   );
