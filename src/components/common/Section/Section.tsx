@@ -20,7 +20,6 @@ const Section = ({
   onEditIFrame = () => {},
   onEditImage = () => {},
 }: SectionProps) => {
-  console.log({ section });
   const { image, title, subtitle, description, iframe } = section;
   const isInverted = index % 2 === 1 && enableInversion;
   const textClass = isInverted

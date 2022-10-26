@@ -1,4 +1,4 @@
-import React, { LegacyRef, useEffect, useReducer } from "react";
+import React, { FC, LegacyRef, useEffect, useReducer } from "react";
 import classNames from "classnames";
 import {
   Loader,
@@ -11,12 +11,12 @@ import {
 } from "@ccomponents";
 import styles from "./homeBanner.module.scss";
 import { COLOR_PRIMARY } from "@constants/colors";
-import { getHomeBannerInfo } from "@webApi/homeBannerApi";
 import { MT_2 } from "@constants/margins";
 import { homeBannerInitialState, homeBannerReducer } from "./context/reducer";
 import {
   setHomeBannerInfo,
   setHomeBannerInfoAux,
+  toggleEdit,
   toggleEditingImage,
 } from "./context/actions";
 import {
@@ -26,10 +26,12 @@ import {
   handleChangeSubtitle,
   handleChangeTitle,
   handleEditSection,
-  handleSave,
 } from "./utils";
+import { HomeBannerProps } from "./types";
+import { useHomeBannerService } from "src/api/api";
 
-const HomeBanner = React.forwardRef(({}, ref) => {
+const HomeBanner: FC<HomeBannerProps> = React.forwardRef(({}, ref) => {
+  const Service = useHomeBannerService();
   const [state, dispatch] = useReducer(
     homeBannerReducer,
     homeBannerInitialState
@@ -38,9 +40,9 @@ const HomeBanner = React.forwardRef(({}, ref) => {
   useEffect(() => {
     (async () => {
       if (!state.homeBannerInfo) {
-        const response = await getHomeBannerInfo();
-        dispatch(setHomeBannerInfoAux(response.data));
-        dispatch(setHomeBannerInfo(response.data));
+        const data = await Service.get();
+        dispatch(setHomeBannerInfoAux(data));
+        dispatch(setHomeBannerInfo(data));
       }
     })();
   }, []);
@@ -54,13 +56,25 @@ const HomeBanner = React.forwardRef(({}, ref) => {
     toggleEditImage();
   };
 
+  const handleSave = () => {
+    try {
+      if (state && state.homeBannerInfo) {
+        Service.update(state.homeBannerInfo.id, state.homeBannerInfo);
+        dispatch(toggleEdit());
+        dispatch(setHomeBannerInfoAux(state.homeBannerInfo));
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <EditWrapper
         className={styles.editContainer}
         onEditSection={() => handleEditSection(dispatch)}
         onCancel={() => handleCancelEdit(dispatch)}
-        onSave={() => handleSave(state, dispatch)}
+        onSave={handleSave}
       >
         <div
           ref={ref as LegacyRef<HTMLDivElement> | undefined}
