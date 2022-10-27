@@ -13,14 +13,14 @@ import styles from "./homeScreen.module.scss";
 import { NavBar, ScreenContainer } from "@ccomponents";
 
 const HomeScreen = () => {
-  const homeBannerRef = useRef(null);
-  const aboutMeRef = useRef(null);
-  const methodologyRef = useRef(null);
-  const nutritionalPlanRef = useRef(null);
-  const nutritionNeedsRef = useRef(null);
-  const nutritionalInfoRef = useRef(null);
-  const contactMeRef = useRef(null);
-  const testimoniesRef = useRef(null);
+  const homeBannerRef = useRef<any>(null);
+  const aboutMeRef = useRef<any>(null);
+  const methodologyRef = useRef<any>(null);
+  const nutritionalPlanRef = useRef<any>(null);
+  const nutritionNeedsRef = useRef<any>(null);
+  const nutritionalInfoRef = useRef<any>(null);
+  const contactMeRef = useRef<any>(null);
+  const testimoniesRef = useRef<any>(null);
   return (
     <ScreenContainer>
       <div className={styles.homeScreenContainer}>

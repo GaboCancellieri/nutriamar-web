@@ -1,4 +1,3 @@
-import { updateNutritionalPlanInfo } from "@webApi/nutritionalPlanApi";
 import { IFrameBackgroundType } from "src/components/common/IFrame/types";
 import {
   resetNutritionalPlanInfo,
@@ -57,22 +56,4 @@ export const onSaveIFrame = async (
     }
   }
   dispatch(toggleIsEditingIFrame());
-};
-
-export const handleNutritionalPlanSave = async (
-  state: INutritionalPlanState,
-  dispatch: any
-) => {
-  try {
-    if (state && state.nutritionalPlanInfo) {
-      await updateNutritionalPlanInfo(
-        state.nutritionalPlanInfo.id,
-        state.nutritionalPlanInfo
-      );
-      dispatch(toggleNutritionalPlanEdit());
-      dispatch(setNutritionalPlanInfoAux(state.nutritionalPlanInfo));
-    }
-  } catch (error) {
-    console.error(error);
-  }
 };

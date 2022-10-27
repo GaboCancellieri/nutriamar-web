@@ -1,4 +1,3 @@
-import { updateHomeBannerInfo } from "@webApi/homeBannerApi";
 import {
   resetHomeBannerInfo,
   setHomeBannerButtonText,
@@ -28,18 +27,6 @@ export const handleChangeSubtitle = (event: any, dispatch: any) => {
 
 export const handleChangeButtonText = (event: any, dispatch: any) => {
   dispatch(setHomeBannerButtonText(event?.target?.value));
-};
-
-export const handleSave = async (state: IHomeBannerState, dispatch: any) => {
-  try {
-    if (state && state.homeBannerInfo) {
-      await updateHomeBannerInfo(state.homeBannerInfo.id, state.homeBannerInfo);
-      dispatch(toggleEdit());
-      dispatch(setHomeBannerInfoAux(state.homeBannerInfo));
-    }
-  } catch (error) {
-    console.error(error);
-  }
 };
 
 export const handleCancelEdit = (dispatch: any) => {

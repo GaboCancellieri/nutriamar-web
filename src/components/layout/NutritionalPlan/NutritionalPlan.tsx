@@ -7,7 +7,6 @@ import {
   ImageEditModal,
   Loader,
 } from "@ccomponents";
-import { getNutritionalPlanInfo } from "@webApi/nutritionalPlanApi";
 import {
   nutritionalPlanInitialState,
   nutritionalPlanReducer,
@@ -21,14 +20,15 @@ import {
 } from "./context/actions";
 import {
   cancelNutritionalPlanEdit,
-  handleNutritionalPlanSave,
   onSaveIFrame,
   toggleIFrameEdit,
   toggleImageEdit,
 } from "./utils";
 import { IFrameBackgroundType } from "src/components/common/IFrame/types";
+import { useNutritionalPlanService } from "src/api/api";
 
 const NutritionalPlan = React.forwardRef(({}, ref) => {
+  const Service = useNutritionalPlanService();
   const [state, dispatch] = useReducer(
     nutritionalPlanReducer,
     nutritionalPlanInitialState
@@ -37,12 +37,27 @@ const NutritionalPlan = React.forwardRef(({}, ref) => {
   useEffect(() => {
     (async () => {
       if (!state.nutritionalPlanInfo) {
-        const response = await getNutritionalPlanInfo();
-        dispatch(setNutritionalPlanInfoAux(response.data));
-        dispatch(setNutritionalPlanInfo(response.data));
+        const data = await Service.get();
+        dispatch(setNutritionalPlanInfoAux(data));
+        dispatch(setNutritionalPlanInfo(data));
       }
     })();
   }, []);
+
+  const handleNutritionalPlanSave = async () => {
+    try {
+      if (state && state.nutritionalPlanInfo) {
+        await Service.update(
+          state.nutritionalPlanInfo.id,
+          state.nutritionalPlanInfo
+        );
+        dispatch(toggleNutritionalPlanEdit());
+        dispatch(setNutritionalPlanInfoAux(state.nutritionalPlanInfo));
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -52,7 +67,7 @@ const NutritionalPlan = React.forwardRef(({}, ref) => {
         <EditWrapper
           onEditSection={() => dispatch(toggleNutritionalPlanEdit())}
           onCancel={() => cancelNutritionalPlanEdit(dispatch)}
-          onSave={() => handleNutritionalPlanSave(state, dispatch)}
+          onSave={() => handleNutritionalPlanSave()}
         >
           <div
             ref={ref as LegacyRef<HTMLDivElement> | undefined}
