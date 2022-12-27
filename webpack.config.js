@@ -25,24 +25,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.(ts|js|tsx|jsx|png|jpg|svg|gif|ico)?$/,
+        test: /.(ts|js)x?$/,
         exclude: /node_modules/,
         use: [{ loader: "babel-loader" }],
       },
       {
         test: /.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 10000,
-            },
-          },
-        ],
       },
     ],
   },
