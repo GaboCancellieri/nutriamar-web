@@ -1,15 +1,12 @@
 import { Section } from "@ccomponents";
-import React, { LegacyRef } from "react";
+import React from "react";
 import { NUTRITIONAL_INFO_SECTIONS } from "./constants";
 import styles from "./nutritionalInfo.module.scss";
 import "./nutritionalInfo.module.scss";
 
-const NutritionalInfo = React.forwardRef(({}, ref) => {
+const NutritionalInfo = ({}) => {
   return (
-    <div
-      className={styles.nutritionalInfoContainer}
-      ref={ref as LegacyRef<HTMLDivElement> | undefined}
-    >
+    <div className={styles.nutritionalInfoContainer}>
       {NUTRITIONAL_INFO_SECTIONS.map((item, index) => {
         return (
           <Section
@@ -23,6 +20,6 @@ const NutritionalInfo = React.forwardRef(({}, ref) => {
       })}
     </div>
   );
-});
+};
 
 export default NutritionalInfo;

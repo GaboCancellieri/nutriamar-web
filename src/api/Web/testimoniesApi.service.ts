@@ -4,9 +4,10 @@ import { handleAlert } from "../api";
 import { ROUTES } from "./constants";
 
 import http from "../http-common";
-const rootURL = ROUTES.HOME_BANNER_ROUTE;
+import { ITestimony } from "src/components/layout/Testimonies/context/types";
+const rootURL = ROUTES.TESTIMONIES_ROUTE;
 
-class HomeBannerService extends Component<{}, { dispatch: any }> {
+class TestimoniesService extends Component<{}, { dispatch: any }> {
   constructor(dispatch: any) {
     super({});
     this.state = {
@@ -23,7 +24,18 @@ class HomeBannerService extends Component<{}, { dispatch: any }> {
     }
   }
 
-  async update(id: string, payload: IHomeBannerInfo) {
+  async add(payload: ITestimony) {
+    const data = await handleAlert(
+      () =>
+        http.post(rootURL, {
+          payload,
+        }),
+      this.state.dispatch
+    );
+    return data;
+  }
+
+  async update(id: string, payload: ITestimony) {
     const data = await handleAlert(
       () =>
         http.patch(`${rootURL}/${id}`, {
@@ -33,6 +45,14 @@ class HomeBannerService extends Component<{}, { dispatch: any }> {
     );
     return data;
   }
+
+  async delete(id: string) {
+    const data = await handleAlert(
+      () => http.delete(`${rootURL}/${id}`),
+      this.state.dispatch
+    );
+    return data;
+  }
 }
 
-export default HomeBannerService;
+export default TestimoniesService;

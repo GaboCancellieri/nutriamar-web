@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { LegacyRef, MouseEventHandler } from "react";
 import { IFRAME_BACKGROUND_VARIANTS } from "../IFrame/constants";
 import { IFrameBackgroundType } from "../IFrame/types";
 import {
@@ -47,6 +47,10 @@ export interface SectionProps {
   columnMargin?: string;
   enableScrollAnimation?: boolean;
   enableSectionEdit?: boolean;
+  isMobile: boolean;
   onEditIFrame?: Function;
   onEditImage?: Function;
+  onEditTitle?: Function;
+  onEditSubtitle?: Function;
+  onEditDescription?: Function;
 }

@@ -1,4 +1,6 @@
 @import '@styles/variables/colors.scss';
+@import '@styles/mixins/mediaqueries.scss';
+
 .needItemCard {
   background: transparent;
   border-radius: 20px;
@@ -23,4 +25,7 @@
 
 .needsTitle {
   max-width: 220px;
+}
+
+@include mobile-only {
 }

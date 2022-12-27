@@ -1,3 +1,5 @@
+@import '@styles/mixins/mediaqueries.scss';
+
 .sectionContainer {
   margin-top: 2rem;
   display: flex;
@@ -22,6 +24,7 @@
   align-items: center;
   width: 440px;
   max-width: 440px;
+  margin-left: 7rem;
 }
 
 .textSectionInverted {
@@ -39,4 +42,58 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+@include mobile-and-tablet-only {
+  .sectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .textSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    max-width: calc(100% - 2rem);
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+    margin-top: 2rem !important;
+    text-align: justify !important;
+  }
+
+  .textSectionInverted {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: calc(100% - 3rem);
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+    margin-top: 0rem !important;
+    text-align: justify !important;
+  }
+
+  .imageMobile {
+    width: 100% !important;
+    object-fit: cover;
+  }
+
+  .linksContainer {
+    margin-top: 1rem;
+  }
 }

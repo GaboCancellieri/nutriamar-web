@@ -1,3 +1,5 @@
+@import '@styles/mixins/mediaqueries.scss';
+
 .contactMeContainer {
   margin-top: 2rem;
   width: 100%;
@@ -14,4 +16,15 @@
 
 .contactLinkContent {
   margin-left: 2rem;
+}
+
+@include mobile-only {
+  .contactLinksContainer {
+    flex-wrap: wrap;
+  }
+
+  .contactLinkContent {
+    flex: 50%;
+    margin: 2rem 1rem;
+  }
 }

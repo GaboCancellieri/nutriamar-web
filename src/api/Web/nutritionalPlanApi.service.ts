@@ -1,9 +1,10 @@
 import { Component } from "react";
 import { IHomeBannerInfo } from "src/components/layout/HomeBanner/context/types";
 import { handleAlert } from "../api";
+import { ROUTES } from "./constants";
 
 import http from "../http-common";
-
+const rootURL = ROUTES.NUTRITIONAL_PLAN_ROUTE;
 class NutritionalPlanService extends Component<{}, { dispatch: any }> {
   constructor(dispatch: any) {
     super({});
@@ -14,7 +15,7 @@ class NutritionalPlanService extends Component<{}, { dispatch: any }> {
 
   async get() {
     try {
-      const { data } = await http.get("/web/nutritionalPlan");
+      const { data } = await http.get(rootURL);
       return data;
     } catch (error) {
       console.error(error);
@@ -24,7 +25,7 @@ class NutritionalPlanService extends Component<{}, { dispatch: any }> {
   async update(id: string, payload: IHomeBannerInfo) {
     const data = await handleAlert(
       () =>
-        http.patch(`/web/nutritionalPlan/${id}`, {
+        http.patch(`${rootURL}/${id}`, {
           payload,
         }),
       this.state.dispatch

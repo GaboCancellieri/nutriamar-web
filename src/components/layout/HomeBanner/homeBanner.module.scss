@@ -1,4 +1,6 @@
 @import '@styles/variables/zIndexes.scss';
+@import '@styles/mixins/mediaqueries.scss';
+@import '@styles/variables/colors.scss';
 
 .homeBannerContainer {
     position: relative;
@@ -48,4 +50,47 @@
 
   .editContainer {
     height: 930px !important;
+  }
+
+  @include mobile-only {
+    .homeBannerContainer {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+  }
+  
+  .homeBannerTextContainer {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translate(-50%);
+      width: calc(100% - 2rem);
+      max-width: calc(100% - 2rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 300px;
+      z-index: z('miscellanea');
+      padding: 1rem;
+      border-radius: 4rem;
+      background-image: linear-gradient(to bottom right, rgb(255, 234, 255), rgb(255, 211, 255));
+    }
+  
+    .homeBannerImage {
+      object-fit: cover;
+      max-height: 600px;
+      z-index: z("belowAll");
+    }
+  
+    .homeBannerPlate {
+      display: none;
+    }
+  
+    .homeBannerWave {
+      position: absolute;
+      bottom: -2rem;
+      left: 0;
+      z-index: z("figure");
+      height: 100px !important;
+    }
   }

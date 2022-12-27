@@ -1,4 +1,5 @@
 @import '@styles/variables/colors.scss';
+@import '@styles/mixins/mediaqueries.scss';
 
 .stepCard {
   background: $colorWhite;
@@ -30,4 +31,11 @@
 
 .methodologyStepTitle {
   max-width: 143px;
+}
+
+@include mobile-only {
+  .stepCard {
+    min-height: fit-content;
+    max-height: fit-content;
+  }
 }

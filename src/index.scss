@@ -2,8 +2,10 @@
 @import '@styles/classes/margins.scss';
 @import '@styles/variables/fonts.scss';
 @import '@styles/variables/zIndexes.scss';
+@import '@styles/mixins/mediaqueries.scss';
 
 body {
+  width: 100vw;
   scroll-behavior: smooth;
   background: $colorAlmostWhite;
   margin: 0;
@@ -41,4 +43,32 @@ code {
   border-radius: 10px;
   background: $colorSecondaryLight;
   content: '';
+}
+
+@include mobile-only {
+  .carousel .control-next.control-arrow, .carousel .control-next.control-arrow:hover{
+    border-radius: 10px;
+    background: $colorSecondaryLight;
+  }
+  
+  .carousel .control-prev.control-arrow, .carousel .control-prev.control-arrow:hover {
+    border-radius: 10px;
+    background: $colorSecondaryLight;
+  }
+  
+  .carousel .control-next.control-arrow {
+    margin-top: 185px;
+    height: 40px;
+    border-radius: 10px;
+    background: $colorSecondaryLight;
+    content: '';
+  }
+  
+  .carousel .control-prev.control-arrow {
+    margin-top: 185px;
+    height: 40px;
+    border-radius: 10px;
+    background: $colorSecondaryLight;
+    content: '';
+  }
 }

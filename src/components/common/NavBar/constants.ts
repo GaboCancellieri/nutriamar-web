@@ -12,12 +12,12 @@ export const NAV_MENU = [
     name: "Plan Nutricional",
   },
   {
-    linkTo: "/#patients",
-    name: "Pacientes",
+    linkTo: "/#marineTherapy",
+    name: "Terapia Marina",
   },
   {
-    linkTo: "/#testimonies",
-    name: "Testimonio",
+    linkTo: "/#liverCleanse",
+    name: "Limpieza Hepática",
   },
   {
     linkTo: "/#contact",

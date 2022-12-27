@@ -1,6 +1,22 @@
 @import '@styles/variables/colors.scss';
 @import '@styles/variables/screenWidths.scss';
 
+.editTestimoniesContainer{
+  padding: 2rem 4rem;
+  margin-top: 2rem;
+  width: calc(100% - 12rem);
+  max-width: calc(100% - 12rem);
+  height: 100%;
+  border: 3px solid #B0219B;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px grey;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid $colorPrimary;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px gray;
+}
+
 .testimoniesContainer {
   margin-top: 2rem;
   display: flex;
@@ -8,6 +24,33 @@
   justify-content: center;
   align-items: flex-start;
   max-width: 1000px;
+}
+
+.testimoniesEditContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: calc(100% - 2rem);
+}
+
+.testimoniesContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: calc(100% - 2rem);
+  max-width: calc(100% - 2rem);
+}
+
+.cardEditingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .cardClass {
@@ -37,6 +80,19 @@
   margin-right: 1rem;
 }
 
+.buttonGroup{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-self: end;
+  margin-bottom: 2rem;
+}
+
 .profilePicSection {
   align-self: start;
+}
+
+.profilePic {
+  border-radius: 100%;
 }

@@ -1,4 +1,5 @@
 @import '@styles/variables/colors.scss';
+@import '@styles/mixins/mediaqueries.scss';
 
 .nutritionNeedsContainer {
   width: 100%;
@@ -30,4 +31,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+@include mobile-and-tablet-only {
+  .needsContainer {
+    width: 100%;
+    max-width: calc(100% - 2rem);
+  }
 }

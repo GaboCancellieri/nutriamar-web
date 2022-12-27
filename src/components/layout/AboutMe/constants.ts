@@ -15,7 +15,7 @@ export const ABOUT_BE_SECTIONS: SectionType[] = [
       textTransform: UPPERCASE,
     },
     subtitle: {
-      text: "Mi nombre es Sofia Daniela Perez, soy Licenciada en Nutrición.",
+      text: "Mi nombre es Sofia Daniela Perez (conocida como La Nutri Del Sur), soy Licenciada en Nutrición.",
       color: COLOR_BLACK_HOVER,
       size: 21,
       fontFamily: DOSIS,
@@ -31,8 +31,8 @@ export const ABOUT_BE_SECTIONS: SectionType[] = [
     image: {
       url: "./public/img/aboutme/about_me_img_1.png",
       altText: `Sobre Mí`,
-      width: "357px",
-      height: "441px",
+      width: "389px",
+      height: "388px",
     },
   },
   {
@@ -55,8 +55,8 @@ export const ABOUT_BE_SECTIONS: SectionType[] = [
     image: {
       url: "./public/img/aboutme/about_me_img_2.png",
       altText: `Sobre Mí`,
-      width: "467px",
-      height: "314px",
+      width: "389px",
+      height: "388px",
     },
   },
 ];

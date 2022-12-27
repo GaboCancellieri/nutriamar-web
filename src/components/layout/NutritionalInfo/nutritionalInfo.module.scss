@@ -1,4 +1,15 @@
+@import '@styles/mixins/mediaqueries.scss';
+@import '@styles/variables/colors.scss';
+
 .nutritionalInfoContainer {
   margin-top: 3rem;
   max-width: 955px;
+}
+
+@include mobile-only {
+  .nutritionalInfoContainer {
+    margin-top: 0rem;
+    max-width: 100%;
+    width: 100%;
+  }
 }

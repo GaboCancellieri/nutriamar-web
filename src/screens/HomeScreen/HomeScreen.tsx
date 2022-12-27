@@ -17,25 +17,30 @@ const HomeScreen = () => {
   const aboutMeRef = useRef<any>(null);
   const methodologyRef = useRef<any>(null);
   const nutritionalPlanRef = useRef<any>(null);
-  const nutritionNeedsRef = useRef<any>(null);
-  const nutritionalInfoRef = useRef<any>(null);
   const contactMeRef = useRef<any>(null);
-  const testimoniesRef = useRef<any>(null);
   return (
     <ScreenContainer>
       <div className={styles.homeScreenContainer}>
         <NavBar
-          refs={[homeBannerRef, aboutMeRef, methodologyRef, nutritionalPlanRef]}
+          refs={[
+            homeBannerRef,
+            aboutMeRef,
+            methodologyRef,
+            nutritionalPlanRef,
+            { current: { offsetTop: 4600 } },
+            { current: { offsetTop: 5150 } },
+            contactMeRef,
+          ]}
         />
         <div className={styles.screenContent}>
           <HomeBanner ref={homeBannerRef} />
           <AboutMe ref={aboutMeRef} />
           <Methodology ref={methodologyRef} />
           <NutritionalPlan ref={nutritionalPlanRef} />
-          <NutritionNeeds ref={nutritionNeedsRef} />
-          <NutritionalInfo ref={nutritionalInfoRef} />
+          <NutritionNeeds />
+          <NutritionalInfo />
           <ContactMe ref={contactMeRef} />
-          <Testimonies ref={testimoniesRef} />
+          <Testimonies />
         </div>
       </div>
     </ScreenContainer>

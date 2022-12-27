@@ -1,3 +1,5 @@
+@import '@styles/mixins/mediaqueries.scss';
+
 .imageContainer {
   position: relative;
   clip-path: inset(0);
@@ -19,4 +21,10 @@
 
 .imageEditButton {
   padding: 10px;
+}
+
+@include mobile-only {
+  .imageContainer {
+    height: 500px;
+  }
 }

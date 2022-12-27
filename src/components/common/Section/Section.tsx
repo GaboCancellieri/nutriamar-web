@@ -9,6 +9,10 @@ import { SectionProps } from "./types";
 import styles from "./section.module.scss";
 import classNames from "classnames";
 import SectionLinkItem from "./SectionLinkItem/SectionLinkItem";
+import connect from "src/context/Store/connect";
+import { WindowSizeStateContext } from "src/context/WindowSizeProvider/WindowSizeProvider";
+import { IWindowSizeState } from "src/context/WindowSizeProvider/types";
+import { ComponentPropsType } from "src/context/Store/connect/types";
 const Section = ({
   section,
   textSectionClass,
@@ -19,9 +23,13 @@ const Section = ({
   enableSectionEdit = false,
   onEditIFrame = () => {},
   onEditImage = () => {},
+  onEditTitle = () => {},
+  onEditSubtitle = () => {},
+  onEditDescription = () => {},
+  isMobile,
 }: SectionProps) => {
   const { image, title, subtitle, description, iframe } = section;
-  const isInverted = index % 2 === 1 && enableInversion;
+  const isInverted = index % 2 === 1 && !isMobile && enableInversion;
   const textClass = isInverted
     ? styles.textSectionInverted
     : styles.textSection;
@@ -39,6 +47,7 @@ const Section = ({
         <div className={styles.section}>
           {!isInverted && image && (
             <Image
+              className={styles.imageMobile}
               url={image.url}
               altText={image.altText}
               width={image.width}
@@ -68,6 +77,7 @@ const Section = ({
               fontFamily={title.fontFamily}
               enableEdit={enableSectionEdit}
               maxHeight="23px"
+              onChange={({ target }) => onEditTitle(target.value)}
             >
               {title.text}
             </Typography>
@@ -80,6 +90,7 @@ const Section = ({
               fontFamily={subtitle?.fontFamily}
               enableEdit={enableSectionEdit}
               maxHeight="23px"
+              onChange={({ target }) => onEditSubtitle(target.value)}
             >
               {subtitle?.text}
             </Typography>
@@ -92,6 +103,7 @@ const Section = ({
               fontFamily={description?.fontFamily}
               enableEdit={enableSectionEdit}
               maxHeight="168px"
+              onChange={({ target }) => onEditDescription(target.value)}
             >
               {section.description?.text}
             </Typography>
@@ -125,4 +137,26 @@ const Section = ({
   );
 };
 
-export default Section;
+const mapStateToProps: any = [
+  {
+    context: WindowSizeStateContext,
+    mapStateToProps: ({ isMobile }: IWindowSizeState) => ({
+      isMobile,
+    }),
+  },
+];
+
+const mergeProps = (
+  stateProps: ComponentPropsType,
+  dispatchProps: ComponentPropsType,
+  ownProps: ComponentPropsType
+) => {
+  const { isMobile } = stateProps;
+  return {
+    isMobile,
+    ...ownProps,
+    ...dispatchProps,
+  };
+};
+
+export default connect({ mapStateToProps, mergeProps })(Section);

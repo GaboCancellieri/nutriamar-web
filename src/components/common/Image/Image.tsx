@@ -1,8 +1,8 @@
+import React from "react";
 import classNames from "classnames";
-import React, { useState } from "react";
 import { ImageProps } from "./types";
 import styles from "./image.module.scss";
-import { Button, Icon, ImageEditModal } from "@ccomponents";
+import { Button, Icon } from "@ccomponents";
 import { FONT_AWESOME } from "@constants/icons";
 import { FIT } from "@constants/buttons";
 
